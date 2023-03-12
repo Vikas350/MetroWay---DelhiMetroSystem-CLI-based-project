@@ -1,5 +1,7 @@
 # 🚅 MetroWay - DelhiMetroSystem-CLI-based-project
 
+ ![x](./pics/Logo.png)
+
 ## ⚙️ Tech Stack Used
  - C++ language
  - Graph Data Structute
