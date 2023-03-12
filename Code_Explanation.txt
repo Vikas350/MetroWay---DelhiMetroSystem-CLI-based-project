@@ -1,0 +1,48 @@
+//Add Edge Function
+This is a function definition in C++ that adds an edge to an adjacency list representation of a graph. The function takes four parameters:
+
+1. u - The first vertex of the edge, of type T.
+2. v - The second vertex of the edge, of type T.
+3. dist - The distance or weight of the edge, of type float.
+4. isBidirex - A boolean value indicating whether the edge is bidirectional (i.e. whether an edge should be added from v to u as well), with a default value of true.
+
+The function adds a pair containing the vertex v and the distance dist to the adjacency list of vertex u using the push_back() function of a vector. If bidir is true, it also adds a pair containing the vertex u and the distance dist to the adjacency list of vertex v.
+
+In other words, this function is used to add edges to an undirected graph, where edges connect two vertices with a certain weight or distance.
+
+
+//DijkstraGetShortestPathTo function
+This is a function definition in C++ that implements Dijkstra's algorithm for finding the shortest path in a weighted graph from a source vertex to a destination vertex. The function takes two parameters:
+
+1. destination - The destination vertex of the path, of type T.
+2. prev - A reference to a map that stores the previous vertex for each vertex in the path, of type map<T,T>.
+
+The function first iterates backwards through the prev map, starting from the destination vertex and following the previous vertex of each vertex in the path until it reaches the source vertex. It adds each vertex in the path to a linked list path using the push_back() function of a list.
+
+Next, it reverses the linked list path so that it represents the path from the source to the destination vertex. Finally, it prints the vertices in the path to the console using the copy() function and an ostream_iterator.
+
+
+//Calculate Amount function using csv and station file
+This is a function definition in C++ that calculates the fare or price of traveling between two stations in a railway network. The function takes two parameters:
+
+1. srstn - The name of the source station, of type string.
+2. dstn - The name of the destination station, of type string.
+
+The function reads in a CSV file named "fare.csv" that contains the fares between stations in the network. The file is read line by line using the getline() function of an input file stream (ifstream) and the atof() function is used to convert each comma-separated value in the line into a floating-point number. The numbers are stored in a 2D array arr of size 235x235.
+
+Next, the function reads in a file named "stations.txt" that contains the names and IDs of the stations in the network. The file is read line by line using the getline() function and the split() function is used to split each line into a vector of strings based on tab (\t) separators. The ID of the source and destination stations are extracted from the file using string comparisons with srstn and dstn.
+
+Finally, the function prints the fare between the source and destination stations to the console using the IDs of the stations and the arr array. The fare is obtained by indexing arr with the IDs minus one (since the IDs start from 1 but the array indices start from 0).
+
+The function prints the fare to the console using the cout statement and some formatting characters at the beginning of the line. The fare is printed as a string concatenated with the value of arr[a-1][b-1], which gives the fare between the source and destination stations.
+
+Note that the function assumes that the fare.csv and stations.txt files are in the same directory as the program and have the specified format. If the files are not present or are formatted differently, the function may not work correctly.
+
+
+// Dijkstra Algo using Set
+This is the implementation of Dijkstra's algorithm for finding the Single Source Shortest Path (SSSP) from a given source node src to all other nodes in the graph. The algorithm uses a set s to keep track of nodes visited and their distances from the source node. Initially, all nodes are set to have a distance of infinity except the source node, which is set to have a distance of 0. The algorithm iteratively visits each node in s and updates the distances of its neighbors if the distance through the current node is shorter than their current distance. The algorithm terminates when all nodes in the graph have been visited.
+
+The function takes three parameters: src, dist, and prev. src is the source node from which to calculate the SSSP, dist is a map that will be populated with the distances of each node from the source node, and prev is a map that will be populated with the previous node in the shortest path from the source node to each node.
+
+Note that the function assumes that the graph is represented using an adjacency list and that the edge weights are non-negative. If the graph is not represented using an adjacency list or the edge weights are negative, the function may not work correctly.
+
