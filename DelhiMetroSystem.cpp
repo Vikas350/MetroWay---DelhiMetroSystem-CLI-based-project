@@ -399,10 +399,9 @@ int main()
     getline(cin,sourcestn);
     cout<<endl;
 
-    system("echo  \"\e[33m\""); // yellow
+    system("echo  \"\e[33m\""); //yellow
     cout<<"\t\t";
     cout<<"Enter destination station in capital case: ";
-    
     getline(cin,deststn);
     
 
